@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 //return a boolean
 //accepting two strings
 // string1 = word
@@ -14,28 +14,27 @@
 
 /**  determins if the word string can be constructed from the letters string */
 function canConstructWord(word, letters) {
-  if(letters.length < word.length){
-    return false
+  if (letters.length < word.length) {
+    return false;
   }
 
   const wordFreqs = getFrequencyCounter(word);
   const lettersFreqs = getFrequencyCounter(letters);
 
-  for(let char in wordFreqs){
-    if(wordFreqs[char] > lettersFreqs[char] || !lettersFreqs[char]){
-      return false
+  for (let char in wordFreqs) {
+    if (!lettersFreqs[char] || wordFreqs[char] > lettersFreqs[char]) {
+      return false;
     }
   }
-  return true
+  return true;
 }
-
 
 /** creates frequency counter given an array like input. */
 function getFrequencyCounter(items) {
   const freqs = {};
   for (const item of items) {
-  const curr = freqs[item] || 0;
-  freqs[item] = curr + 1;
+    const curr = freqs[item] || 0;
+    freqs[item] = curr + 1;
   }
   return freqs;
-  }
+}

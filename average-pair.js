@@ -1,6 +1,5 @@
-"use strict"
+"use strict";
 // add whatever parameters you deem necessary & write docstring
-
 
 //returning a boolean
 //inputs are an sorted array of numbers and a number
@@ -13,30 +12,25 @@
 // else decrement right pointer by 1
 //return false
 
-
 //edge case: if the lenght of the input array is less than two return false
 
 function averagePair(nums, targetAvg) {
-  if(nums.length < 2){
-    return false
+  if (nums.length < 2) {
+    return false;
   }
 
   let left = 0;
-  let right = nums.length-1;
+  let right = nums.length - 1;
 
-  while(left < right){
-    const avg = (nums[left] + nums[right]) / 2
-    if(avg === targetAvg){
-      return true
-    }
-    else if(avg < targetAvg){
+  while (left < right) {
+    const avg = (nums[left] + nums[right]) / 2;
+    if (avg === targetAvg) {
+      return true;
+    } else if (avg < targetAvg) {
       left++;
-    }
-    else{
+    } else {
       right--;
     }
   }
-return false
-
+  return false;
 }
-
